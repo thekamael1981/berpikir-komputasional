@@ -1,0 +1,214 @@
+/* Custom styles for the computational thinking app */
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+.nav-btn.active {
+    border-bottom-color: #3B82F6 !important;
+    color: #3B82F6;
+}
+
+/* Drag and drop styles */
+.drag-area {
+    min-height: 200px;
+    border: 2px dashed #D1D5DB;
+    border-radius: 8px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.drag-area.drag-over {
+    border-color: #3B82F6;
+    background-color: #EFF6FF;
+}
+
+.draggable {
+    cursor: move;
+    user-select: none;
+    transition: transform 0.2s ease;
+}
+
+.draggable:hover {
+    transform: scale(1.05);
+}
+
+.draggable.dragging {
+    opacity: 0.5;
+}
+
+/* Flow chart styles */
+.flowchart-step {
+    background: #F3F4F6;
+    border: 2px solid #D1D5DB;
+    border-radius: 8px;
+    padding: 12px;
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flowchart-step.start {
+    background: #DBEAFE;
+    border-color: #3B82F6;
+}
+
+.flowchart-step.end {
+    background: #FEF3C7;
+    border-color: #F59E0B;
+}
+
+.flowchart-step.process {
+    background: #D1FAE5;
+    border-color: #10B981;
+}
+
+.flowchart-step.decision {
+    background: #FEE2E2;
+    border-color: #EF4444;
+    clip-path: polygon(0% 50%, 20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%);
+}
+
+/* Pattern game styles */
+.pattern-grid {
+    display: grid;
+    gap: 8px;
+    margin: 20px 0;
+}
+
+.pattern-grid.grid-3x3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.pattern-grid.grid-4x4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.pattern-cell {
+    aspect-ratio: 1;
+    border: 2px solid #D1D5DB;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.pattern-cell:hover {
+    border-color: #3B82F6;
+}
+
+.pattern-cell.active {
+    background: #3B82F6;
+    color: white;
+}
+
+.pattern-cell.correct {
+    background: #10B981;
+    color: white;
+}
+
+.pattern-cell.incorrect {
+    background: #EF4444;
+    color: white;
+}
+
+/* Badge styles */
+.badge {
+    transition: all 0.3s ease;
+}
+
+.badge.earned {
+    transform: scale(1.1);
+    box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+}
+
+.badge.locked {
+    opacity: 0.4;
+    filter: grayscale(100%);
+}
+
+/* Quiz styles */
+.quiz-option {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.quiz-option:hover {
+    background-color: #F3F4F6;
+}
+
+.quiz-option.selected {
+    background-color: #DBEAFE;
+    border-color: #3B82F6;
+}
+
+.quiz-option.correct {
+    background-color: #D1FAE5;
+    border-color: #10B981;
+}
+
+.quiz-option.incorrect {
+    background-color: #FEE2E2;
+    border-color: #EF4444;
+}
+
+/* Animation for smooth transitions */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .md\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .md\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Loading state */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Success and error states */
+.success-message {
+    background-color: #D1FAE5;
+    border-color: #10B981;
+    color: #047857;
+}
+
+.error-message {
+    background-color: #FEE2E2;
+    border-color: #EF4444;
+    color: #DC2626;
+}
